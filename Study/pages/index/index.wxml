@@ -1,3 +1,33 @@
 <!--index.wxml-->
 <view class="container">
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  
+  <view class="notice">
+    <image class="notice-img" src="../../images/icon-radio.png"></image>
+    <text class="notice-title">最新通知：</text>
+    <text class="notice-content">第一期课程已经完成，欢迎观看。第一期课程已经完成，欢迎观看。</text>
+  </view>
+
+  <view class="list">
+  <block wx:for="{{listItems}}">
+    <view class="list-item">
+      <image src="../../images/cover-4.jpg" class="list-item-img"></image>
+      <view class="list-item-right">
+        <text class="list-itme-title">{{item.title}}</text>
+        <text class="list-item-content">{{item.content}}</text>
+        <text class="list-item-foot">{{item.foot}}</text>
+      </view>
+    </view>
+    <view class="line"></view>
+  </block>
+  </view>
 </view>
